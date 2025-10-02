@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:'poppins', sans-serif;
+    box-sizing:border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family:'Poppins', sans-serif;
+    box-sizing:border-box;
+}
+
+.container{
+    width:100%;
+    min-height:100vh;
+    background: linear-gradient(180deg,#e3f9ff,#cdeffd);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:24px;
+}
+.calculator{
+    background: #2f3640;
+    padding:22px;
+    border-radius:14px;
+    box-shadow: 0 12px 30px rgba(15,23,36,0.35);
+    width:360px;
+}
+.calculator form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* display */
+.calculator form .display{
+    display:flex;
+    justify-content:flex-end;
+    margin:4px 0 8px 0;
+}
+.calculator form .display input{
+    text-align:right;
+    width:100%;
+    font-size:36px;
+    padding:14px 12px;
+    border-radius:8px;
+    box-shadow:none;
+    background: transparent;
+    color:#fff;
+    border: none;
+}
+#result {
+  font-size: 20px;
+}
+
+#result span {
+  color: #ffff76;
+}
+
+/* buttons layout */
+.calculator form > div:not(.display){
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.calculator form input[type="button"]{
+    border:0;
+    outline:0;
+    width:64px;
+    height:64px;
+    border-radius:10px;
+    font-size:20px;
+    color:#fff;
+    cursor:pointer;
+    margin:6px 0;
+    background: linear-gradient(180deg,#3a4452,#2b3137);
+    box-shadow: -6px -6px 12px rgba(255,255,255,0.03), 6px 6px 16px rgba(0,0,0,0.4);
+    transition: transform .08s ease, box-shadow .12s ease;
+}
+.calculator form input[type="button"]:hover{ transform: translateY(-3px); }
+
+/* special buttons */
+.calculator form input[value="AC"]{ background: linear-gradient(180deg,#ff6b6b,#e45757); }
+.calculator form input[value="C"]{ background: linear-gradient(180deg,#ff9f43,#ff7b00); }
+.calculator form input[value="="]{ background: linear-gradient(180deg,#00d25b,#00a86b); color:#001814; font-weight:700; }
+.calculator form input.equal{ width:145px; }
+
+/* responsive */
+@media (max-width:420px){
+  .calculator{ width:100%; }
+  .calculator form input[type="button"]{ width:22%; }
+  .calculator form input.equal{ width:48%; }
+  .calculator form .display input{ font-size:28px; }
+}
+
